@@ -1,13 +1,9 @@
-from flask_restful import reqparse, Resource
-from BLL.MessageBLL import MessagedBLL
-
-parser = reqparse.RequestParser()
-parser.add_argument('pie')
-parser.add_argument('line')
-parser.add_argument('bar')
+from flask_restful import Resource
+from BLL.PersonBLL import PersonBLL
 
 class PersonController(Resource):
     def get(self):
-        return ""
+        personBll = PersonBLL()
+        return personBll.getAll()
 
     
