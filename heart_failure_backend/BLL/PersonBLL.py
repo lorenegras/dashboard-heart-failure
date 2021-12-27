@@ -1,7 +1,4 @@
-from utils.ApiWeather import ApiWeather
-from utils.ApiDialogFlow import ApiDialogFlow
-import re
-from datetime import datetime
+
 
 #Variables globales
 MESSAGES = {
@@ -29,7 +26,7 @@ def convert_date(date):
 #     extracted_time = datetime.strptime(get_time_string.group(), '%H:%M:%S').time()
 #     return extracted_time.hour
 
-class MessagedBLL():
+class PersonBLL():
     def getAll(self):
         return MESSAGES
 
