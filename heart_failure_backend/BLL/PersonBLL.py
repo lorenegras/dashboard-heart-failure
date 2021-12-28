@@ -1,7 +1,8 @@
-from heart_failure_backend.DAL.PersonDAL import DownloadData
+
+from DAL.PersonDAL import PersonDAL
 
 class PersonBLL():
     def getAll(self):
-        downloaddata = DownloadData()
-        data = downloaddata.download_heart()
+        personDAL = PersonDAL()
+        data = personDAL.getAll()
         return data
