@@ -8,7 +8,7 @@ describe('ChartjsLineAgeCholesterolComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChartjsLineAgeCholesterolComponent ]
+      declarations: [ ChartjsLineAgeCholesterolComponent ],
     })
     .compileComponents();
   }));

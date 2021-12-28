@@ -8,7 +8,7 @@ describe('ChartjsPieAgeCardiacdiseaseComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChartjsPieAgeCardiacdiseaseComponent ]
+      declarations: [ ChartjsPieAgeCardiacdiseaseComponent ],
     })
     .compileComponents();
   }));

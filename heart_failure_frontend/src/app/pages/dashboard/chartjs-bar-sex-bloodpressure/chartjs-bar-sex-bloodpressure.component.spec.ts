@@ -8,7 +8,7 @@ describe('ChartjsBarSexBloodpressureComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChartjsBarSexBloodpressureComponent ]
+      declarations: [ ChartjsBarSexBloodpressureComponent ],
     })
     .compileComponents();
   }));
