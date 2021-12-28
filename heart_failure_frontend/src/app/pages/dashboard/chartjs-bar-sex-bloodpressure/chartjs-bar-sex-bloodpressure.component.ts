@@ -2,9 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbColorHelper, NbThemeService } from '@nebular/theme';
 
 @Component({
-  selector: 'chartjs-bar-sex-bloodpressure',
+  selector: 'ngx-chartjs-bar-sex-bloodpressure',
   templateUrl: './chartjs-bar-sex-bloodpressure.component.html',
-  styleUrls: ['./chartjs-bar-sex-bloodpressure.component.scss']
+  styleUrls: ['./chartjs-bar-sex-bloodpressure.component.scss'],
 })
 export class ChartjsBarSexBloodpressureComponent implements OnDestroy {
 

@@ -12,7 +12,7 @@ import { ChartjsPieAgeCardiacdiseaseComponent } from './chartjs-pie-age-cardiacd
   imports: [
     NbCardModule,
     ThemeModule,
-    ChartModule
+    ChartModule,
   ],
   declarations: [
     DashboardComponent,

@@ -2,9 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
-  selector: 'chartjs-pie-age-cardiacdisease',
+  selector: 'ngx-chartjs-pie-age-cardiacdisease',
   templateUrl: './chartjs-pie-age-cardiacdisease.component.html',
-  styleUrls: ['./chartjs-pie-age-cardiacdisease.component.scss']
+  styleUrls: ['./chartjs-pie-age-cardiacdisease.component.scss'],
 })
 export class ChartjsPieAgeCardiacdiseaseComponent implements OnDestroy {
 
