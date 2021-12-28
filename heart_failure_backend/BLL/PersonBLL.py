@@ -1,4 +1,4 @@
-from heart_failure_backend.DAL.DownloadData import DownloadData
+from heart_failure_backend.DAL.PersonDAL import DownloadData
 
 class PersonBLL():
     def getAll(self):
