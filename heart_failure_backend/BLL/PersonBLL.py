@@ -1,7 +1,10 @@
-from heart_failure_backend.DAL.DownloadData import DownloadData
+
+from DAL.PersonDAL import PersonDAL
+from DTO.PersonDTO import PersonDTO
 
 class PersonBLL():
     def getAll(self):
-        downloaddata = DownloadData()
-        data = downloaddata.download_heart()
-        return data
+        personDAL = PersonDAL()
+        df_data = personDAL.getAll()
+        list_of_persons = [(PersonDTO(row.Age, row.Sex, row.Cholesterol, row.RestingBP, row.HeartDisease)) for index, row in df_data.iterrows() ]
+        return list_of_persons
