@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 const urlServer = 'http://localhost:5000';
 @Injectable()
 export class AgeheartdiseaseService extends AgeHeartDiseaseData {
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient) {
     super();
   }
   private ageHeartDiseaseList: AgeHeartDisease[]  = [
