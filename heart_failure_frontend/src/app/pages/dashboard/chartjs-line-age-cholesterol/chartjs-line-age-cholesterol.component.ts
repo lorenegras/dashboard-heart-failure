@@ -23,8 +23,8 @@ export class ChartjsLineAgeCholesterolComponent implements OnDestroy {
         datasets: [{
           data: [65, 59, 80, 81, 56, 55, 40, 110, 125, 139],
           label: 'Series A',
-          backgroundColor: NbColorHelper.hexToRgbA(colors.primary, 0.3),
-          borderColor: colors.primary,
+          backgroundColor: NbColorHelper.hexToRgbA('#4A148C', 0.3),
+          borderColor: '#4A148C',
         },
         ],
       };
