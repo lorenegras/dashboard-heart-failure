@@ -28,7 +28,6 @@ export class ChartjsBarSexBloodpressureComponent implements OnDestroy {
       };
 
       this.options = {
-        maintainAspectRatio: false,
         responsive: true,
         legend: {
           labels: {

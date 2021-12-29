@@ -36,7 +36,6 @@ export class ChartjsPieAgeCardiacdiseaseComponent implements OnDestroy {
         };
 
         this.options = {
-          maintainAspectRatio: false,
           responsive: true,
           scales: {
             xAxes: [

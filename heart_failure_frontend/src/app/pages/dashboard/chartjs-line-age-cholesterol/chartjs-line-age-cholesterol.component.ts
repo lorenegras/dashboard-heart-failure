@@ -31,7 +31,7 @@ export class ChartjsLineAgeCholesterolComponent implements OnDestroy {
 
       this.options = {
         responsive: true,
-        maintainAspectRatio: false,
+        aspectRatio: 4,
         scales: {
           xAxes: [
             {
