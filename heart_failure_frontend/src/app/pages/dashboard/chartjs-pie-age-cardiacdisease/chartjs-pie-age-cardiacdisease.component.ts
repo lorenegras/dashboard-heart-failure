@@ -16,9 +16,9 @@ export class ChartjsPieAgeCardiacdiseaseComponent implements OnDestroy {
 
   constructor(private theme: NbThemeService, private ageheartdiseaseService: AgeHeartDiseaseData,
     private personsService: PersonsData) {
-      this.personsService.getPersons().subscribe(persons => {
-        console.log(persons);
-      });
+      // this.personsService.getPersons().subscribe(persons => {
+      //   console.log(persons);
+      // });
     this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
 
       this.ageheartdiseaseService.getAgeHeartDisease().subscribe(ageheartdiseaseList => {
@@ -31,7 +31,7 @@ export class ChartjsPieAgeCardiacdiseaseComponent implements OnDestroy {
           datasets: [{
             data: countheartdisease,
             // tslint:disable-next-line:max-line-length
-            backgroundColor: ['#F44336', '#B71C1C', '#EC407A', '#9C27B0', '#4A148C', '#7E57C2', ],
+            backgroundColor: ['#F44336', '#B71C1C', '#EC407A', '#9C27B0', '#4A148C', '#7E57C2'],
           }],
         };
 
