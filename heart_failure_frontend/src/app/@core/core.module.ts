@@ -11,6 +11,8 @@ import { UserService } from './mock/users.service';
 import { MockDataModule } from './mock/mock-data.module';
 import { AgeHeartDiseaseData } from './data/ageheartdisease';
 import { AgeheartdiseaseService } from './mock/ageheartdisease.service';
+import { PersonsService } from './mock/persons.service';
+import { PersonsData } from './data/persons';
 
 const socialLinks = [
   {
@@ -33,6 +35,7 @@ const socialLinks = [
 const DATA_SERVICES = [
   { provide: UserData, useClass: UserService },
   { provide: AgeHeartDiseaseData, useClass: AgeheartdiseaseService },
+  { provide: PersonsData, useClass: PersonsService},
 ];
 
 export class NbSimpleRoleProvider extends NbRoleProvider {

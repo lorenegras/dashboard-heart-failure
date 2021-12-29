@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 import { AgeHeartDiseaseData } from 'app/@core/data/ageheartdisease';
+import { PersonsData } from 'app/@core/data/persons';
 
 @Component({
   selector: 'ngx-chartjs-pie-age-cardiacdisease',
@@ -13,7 +14,11 @@ export class ChartjsPieAgeCardiacdiseaseComponent implements OnDestroy {
   options: any;
   themeSubscription: any;
 
-  constructor(private theme: NbThemeService, private ageheartdiseaseService: AgeHeartDiseaseData) {
+  constructor(private theme: NbThemeService, private ageheartdiseaseService: AgeHeartDiseaseData,
+    private personsService: PersonsData) {
+      this.personsService.getPersons().subscribe(persons => {
+        console.log(persons);
+      });
     this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
 
       this.ageheartdiseaseService.getAgeHeartDisease().subscribe(ageheartdiseaseList => {
