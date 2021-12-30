@@ -16,7 +16,7 @@ export class SexbloodpressureService extends SexBloodPressureData {
   ];
 
   getBloodPressure(): Observable<SexBloodPressure[]> {
-    // return this.http.get<AgeHeartDisease[]>(urlServer + '/ageheartdisease');
-    return observableOf(this.sexbloodpressureList);
+    return this.http.get<SexBloodPressure[]>(urlServer + '/sexbloodpressure');
+    // return observableOf(this.sexbloodpressureList);
   }
 }
