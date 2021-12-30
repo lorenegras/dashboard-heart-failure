@@ -13,6 +13,10 @@ import { AgeHeartDiseaseData } from './data/ageheartdisease';
 import { AgeheartdiseaseService } from './mock/ageheartdisease.service';
 import { PersonsService } from './mock/persons.service';
 import { PersonsData } from './data/persons';
+import { SexBloodPressureData } from './data/sexbloodpressure';
+import { SexbloodpressureService } from './mock/sexbloodpressure.service';
+import { AgeCholesterolRateData } from './data/agecholesterolRate';
+import { AgecholesterolRateService } from './mock/agecholesterol-rate.service';
 
 const socialLinks = [
   {
@@ -35,6 +39,8 @@ const socialLinks = [
 const DATA_SERVICES = [
   { provide: UserData, useClass: UserService },
   { provide: AgeHeartDiseaseData, useClass: AgeheartdiseaseService },
+  { provide: SexBloodPressureData, useClass: SexbloodpressureService },
+  { provide: AgeCholesterolRateData, useClass: AgecholesterolRateService },
   { provide: PersonsData, useClass: PersonsService},
 ];
 
