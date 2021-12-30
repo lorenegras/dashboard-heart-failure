@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 
 export interface SexBloodPressure {
-  age: number;
+  sex: string;
   bloodPressure: number;
 }
 
