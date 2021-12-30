@@ -12,7 +12,7 @@ class AgeHeartDiseaseBLL():
         df_age_heartdisease['AgeCat'] = age_cat
         df_age_cat_heartdisease = df_age_heartdisease.drop(columns="Age")
         sort_df_age_cat_heartdisease = df_age_cat_heartdisease.sort_values(by=['AgeCat'])
-        group = sort_df_age_cat_heartdisease.groupby(['AgeCat', 'HeartDisease']).size()
-        df_group_heartdisease = pd.DataFrame({'CountHeartDisease':group}).reset_index()                                                                                                 
+        group = sort_df_age_cat_heartdisease.groupby(['AgeCat', 'HeartDisease']).size() #groupby object
+        df_group_heartdisease = pd.DataFrame({'CountHeartDisease':group}).reset_index() #dataframe transformation                                                                                            
         list_of_persons = [(AgeHeartDiseaseDTO(row.AgeCat, row.HeartDisease, row.CountHeartDisease)) for index, row in df_group_heartdisease.iterrows() ] #DTO List
         return list_of_persons
