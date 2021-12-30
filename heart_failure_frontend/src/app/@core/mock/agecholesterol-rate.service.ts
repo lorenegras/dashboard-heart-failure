@@ -23,7 +23,7 @@ export class AgecholesterolRateService extends AgeCholesterolRateData {
   ];
 
   getAgeCholesterolRate(): Observable<AgeCholesterolRate[]> {
-    // return this.http.get<AgeHeartDisease[]>(urlServer + '/ageheartdisease');
-    return observableOf(this.ageCholesterolRateList);
+    return this.http.get<AgeCholesterolRate[]>(urlServer + '/agecholesterol');
+    // return observableOf(this.ageCholesterolRateList);
   }
 }
