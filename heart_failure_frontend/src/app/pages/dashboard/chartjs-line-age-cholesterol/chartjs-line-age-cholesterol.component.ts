@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbThemeService, NbColorHelper } from '@nebular/theme';
+import { AgeCholesterolRateData } from 'app/@core/data/agecholesterolRate';
 
 @Component({
   selector: 'ngx-chartjs-line-age-cholesterol',
@@ -12,56 +13,66 @@ export class ChartjsLineAgeCholesterolComponent implements OnDestroy {
   options: any;
   themeSubscription: any;
 
-  constructor(private theme: NbThemeService) {
+  constructor(private theme: NbThemeService, private agecholesterolService: AgeCholesterolRateData) {
     this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
 
       const colors: any = config.variables;
       const chartjs: any = config.variables.chartjs;
 
-      this.data = {
-        labels: ['0', '10', '20', '30', '40', '50', '60', '70', '80', '90'],
-        datasets: [{
-          data: [65, 59, 80, 81, 56, 55, 40, 110, 125, 139],
-          label: 'Series A',
-          backgroundColor: NbColorHelper.hexToRgbA('#4A148C', 0.3),
-          borderColor: '#4A148C',
-        },
-        ],
-      };
+      this.agecholesterolService.getAgeCholesterolRate().subscribe(agecholesterolRateList => {
+        const labels = agecholesterolRateList
+        .map((agecholesterol => agecholesterol.age));
 
-      this.options = {
-        responsive: true,
-        aspectRatio: 4,
-        scales: {
-          xAxes: [
-            {
-              gridLines: {
-                display: true,
-                color: chartjs.axisLineColor,
-              },
-              ticks: {
-                fontColor: chartjs.textColor,
-              },
-            },
-          ],
-          yAxes: [
-            {
-              gridLines: {
-                display: true,
-                color: chartjs.axisLineColor,
-              },
-              ticks: {
-                fontColor: chartjs.textColor,
-              },
-            },
-          ],
-        },
-        legend: {
-          labels: {
-            fontColor: chartjs.textColor,
+        const agecholesterolRate = agecholesterolRateList
+        .map((agecholesterol => agecholesterol.cholesterolRate));
+
+        this.data = {
+          labels: labels,
+          datasets: [{
+            data: agecholesterolRate,
+            label: 'taux de cholesterol en fonction de l\'age',
+            backgroundColor: NbColorHelper.hexToRgbA('#4A148C', 0.3),
+            borderColor: '#4A148C',
           },
-        },
-      };
+          ],
+        };
+
+        this.options = {
+          responsive: true,
+          aspectRatio: 4,
+          scales: {
+            xAxes: [
+              {
+                gridLines: {
+                  display: true,
+                  color: chartjs.axisLineColor,
+                },
+                ticks: {
+                  fontColor: chartjs.textColor,
+                },
+              },
+            ],
+            yAxes: [
+              {
+                gridLines: {
+                  display: true,
+                  color: chartjs.axisLineColor,
+                },
+                ticks: {
+                  fontColor: chartjs.textColor,
+                },
+              },
+            ],
+          },
+          legend: {
+            labels: {
+              fontColor: chartjs.textColor,
+            },
+          },
+        };
+
+      });
+
     });
   }
 
