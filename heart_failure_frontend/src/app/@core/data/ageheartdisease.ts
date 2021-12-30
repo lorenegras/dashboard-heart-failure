@@ -1,8 +1,9 @@
 import { Observable } from 'rxjs';
 
 export interface AgeHeartDisease {
-  ageCat: string;
+  age: string;
   countHeartDisease: number;
+  heartdisease: number;
 }
 
 export abstract class AgeHeartDiseaseData {

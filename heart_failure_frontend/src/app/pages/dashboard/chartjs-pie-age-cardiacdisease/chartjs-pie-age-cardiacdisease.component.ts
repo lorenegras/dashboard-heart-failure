@@ -22,8 +22,14 @@ export class ChartjsPieAgeCardiacdiseaseComponent implements OnDestroy {
     this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
 
       this.ageheartdiseaseService.getAgeHeartDisease().subscribe(ageheartdiseaseList => {
-        const labels = ageheartdiseaseList.map((ageheartdisease => ageheartdisease.ageCat));
-        const countheartdisease = ageheartdiseaseList.map((ageheartdisease => ageheartdisease.countHeartDisease));
+        const labels = ageheartdiseaseList
+        .filter(ageheartdisease => ageheartdisease.heartdisease === 1)
+        .map((ageheartdisease => ageheartdisease.age));
+
+        const countheartdisease = ageheartdiseaseList
+        .filter(ageheartdisease => ageheartdisease.heartdisease === 1)
+        .map((ageheartdisease => ageheartdisease.countHeartDisease));
+
         const colors: any = config.variables;
         const chartjs: any = config.variables.chartjs;
         this.data = {
